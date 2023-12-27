@@ -1,4 +1,9 @@
 using Microsoft.AspNetCore.Mvc;
+using Pratika.ClassForTest.Address;
+using Pratika.ClassForTest.Order;
+using Pratika.ClassForTest.Product;
+using Pratika.ClassForTest.TaskItem;
+using Pratika.ClassForTest.User;
 using System.Diagnostics;
 using System.Text.Json;
 
@@ -6,6 +11,7 @@ namespace Pratika.Controllers
 {
     [ApiController]
     [Route("praticka")]
+    
     public class Products : ControllerBase
     {
         private readonly string productsFilePath = Path.Combine(Directory.GetCurrentDirectory(), "products.json");
@@ -110,6 +116,11 @@ namespace Pratika.Controllers
         }
     }
 
+
+
+    /// <summary>
+    /// 
+    /// </summary>
     public class Users : ControllerBase
     {
         private readonly string usersFilePath = Path.Combine(Directory.GetCurrentDirectory(), "users.json");
@@ -214,6 +225,9 @@ namespace Pratika.Controllers
         }
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
     public class Orders : ControllerBase
     {
         private readonly string ordersFilePath = Path.Combine(Directory.GetCurrentDirectory(), "orders.json");
@@ -318,7 +332,9 @@ namespace Pratika.Controllers
         }
     }
 
-
+    /// <summary>
+    /// 
+    /// </summary>
     public class Adres : ControllerBase
     {
         private readonly string addressesFilePath = Path.Combine(Directory.GetCurrentDirectory(), "addresses.json");
@@ -424,6 +440,9 @@ namespace Pratika.Controllers
     }
 
 
+   /// <summary>
+   /// 
+   /// </summary>
     public class TaskItems : ControllerBase
     {
         private readonly string taskItemsFilePath;
@@ -517,46 +536,5 @@ namespace Pratika.Controllers
             SaveChanges();
             return NoContent();
         }
-    }
-
-
-    public class Product
-    {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public decimal Price { get; set; }
-        public string Category { get; set; }
-        
-    }
-
-    public class User
-    {
-        public int Id { get; set; }
-        public string Username { get; set; }
-        public string Email { get; set; }
-        public string Password { get; set; }
-    }
-
-    public class Order
-    {
-        public int Id { get; set; }
-        public int UserId { get; set; }
-        public DateTime OrderDate { get; set; }
-        public List<Product> Products { get; set; }
-    }
-
-    public class Address
-    {
-        public int Id { get; set; }
-        public string Street { get; set; }
-        public string City { get; set; }
-        public string ZipCode { get; set; }
-    }
-
-    public class TaskItem
-    {
-        public int Id { get; set; }
-        public string Title { get; set; }
-        public bool IsComplete { get; set; }
     }
 }
