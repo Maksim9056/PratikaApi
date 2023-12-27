@@ -1,5 +1,6 @@
 ﻿namespace Pratika.ClassForTest.Order
 {
+    using Pratika.ClassForTest.Product;
     public class Order
     {
         public int Id { get; set; }
