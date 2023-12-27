@@ -1,0 +1,6 @@
+@Pratika_HostAddress = http://localhost:5275
+
+GET {{Pratika_HostAddress}}/pratica/
+Accept: application/json
+
+###
